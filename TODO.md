@@ -47,18 +47,20 @@ Presentation subjects:
 10 min slidedeck
 2 min per slide
 
+Considerations: How do we get all attendees on board? (short intro to e.g. CICD)
+
 * [ ] Presentation - SPETLR and the organization behind
 * [ ] ONE SLIDE - our key take-homes
    * SPETLR can be used as an ETL framework
    * SPETLR enables reusing of code
    * SPETLR can be used for full unit and integration testing of ETL components
    * SPETLR can be used for CI/CD setup
-
+   * Automated deployment
 * [ ] ONE SLIDE - We describe the three environments, but do not go into depth around azure deployments.
-* [ ] ONE SLIDE - xxx
-* [ ] ONE SLIDE - xxx
-* [ ] ONE SLIDE - xxx
-* [ ] ONE SLIDE - xxx
+* [ ] ONE SLIDE - Orchestrator/ETL structure
+* [ ] ONE SLIDE - Configurator 
+* [ ] ONE SLIDE - Unit/Integration testing
+* [ ] ONE SLIDE - CICD (spetlr configurator, PR process, deployment process)
 
 
 
