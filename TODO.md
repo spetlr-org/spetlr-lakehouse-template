@@ -3,6 +3,7 @@
 ## Scope for lakehouse demo project
 
 
+### Deployment Environment
 Create deployment pipeline:
 * One dev environment
 * One test environment
@@ -10,14 +11,13 @@ Create deployment pipeline:
 
 For each environment Azure ressources:
 * Resource group
-* Databricks workspace
+* Databricks workspace (+clusters)
 * Storage account for sample data
 
+In the repo, place simple .csv/.json files.
 
-Databricks related stuff
-* simple .csv/.json files
-  * Sample data in repo
-
+### Deployment Databricks
+Repo:
 * Environment folder
  * Databases
   * .sql files with bronze, silver and gold definitions (use spetlr config ids) 
@@ -37,4 +37,6 @@ Databricks related stuff
    * One TestHandle example
  * Cluster
   * Integration test using Configurator
-  * 
+
+* Job folder
+  * dbx configured jobs
