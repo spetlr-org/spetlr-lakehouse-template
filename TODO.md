@@ -17,12 +17,24 @@ For each environment Azure ressources:
 Databricks related stuff
 * simple .csv/.json files
   * Sample data in repo
-  *  
+
+* Environment folder
+ * Databases
+  * .sql files with bronze, silver and gold definitions (use spetlr config ids) 
+ * tablenames
+   * .yml files with configurator info    
+
 * Three folders
   * Bronze
-    * Orchestrator
+    * Orchestrator (w. simple E-T-L steps)
   * Silver
-    * Orchestrator
+    * Orchestrator (w. simple E-T-L steps)
   * Gold
-    * Orchestrator
-
+    * Orchestrator (w. simple E-T-L steps)
+* Test folder
+ * Local
+   * One transformer test
+   * One TestHandle example
+ * Cluster
+  * Integration test using Configurator
+  * 
