@@ -3,7 +3,7 @@
 ## Scope for lakehouse demo project
 
 
-### Deployment Environment
+### Deployment Environment (mrmasterplan)
 Create deployment pipeline:
 * [ ] One dev environment
 * [ ] One test environment
@@ -17,7 +17,7 @@ For each environment Azure ressources:
 Other repo stuff:
 * [ ]  In the repo, place simple .csv/.json files.
 
-### Deployment Databricks
+### Deployment Databricks (JeppeBlixen, farbo, LauJohansson)
 Repo:
 * [ ] Environment folder
  * [ ] Databases
@@ -42,7 +42,7 @@ Repo:
   * Minimum one example of dbx configured jobs
      
 
-Presentation subjects:
+### Presentation subjects (mrmasterplan, JeppeBlixen, farbo, LauJohansson)
 
 10 min slidedeck
 2 min per slide
