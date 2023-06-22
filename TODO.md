@@ -32,11 +32,11 @@ Repo:
   * Gold
     * Orchestrator (w. simple E-T-L steps)
 * Test folder
- * Local
-   * One transformer test
-   * One TestHandle example
- * Cluster
-  * Integration test using Configurator
+  * Local
+    * One transformer test
+    * One TestHandle example
+  * Cluster
+    * Integration test using Configurator
 
 * Job folder
   * dbx configured jobs
