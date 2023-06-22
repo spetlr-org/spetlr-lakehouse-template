@@ -50,8 +50,10 @@ Presentation subjects:
 * [ ] Presentation - SPETLR and the organization behind
 * [ ] ONE SLIDE - our key take-homes
    * SPETLR can be used as an ETL framework
+   * SPETLR enables reusing of code
    * SPETLR can be used for full unit and integration testing of ETL components
-   * 
+   * SPETLR can be used for CI/CD setup
+
 * [ ] ONE SLIDE - We describe the three environments, but do not go into depth around azure deployments.
 * [ ] ONE SLIDE - xxx
 * [ ] ONE SLIDE - xxx
