@@ -1,0 +1,40 @@
+{
+    "jupyter.defaultCellMarker": "# COMMAND ----------",
+    //Format when saving
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "[sql]": {
+        "editor.formatOnSave": false
+    },
+    //Black
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=88"
+    ],
+    "isort.args": [
+        "--profile=black"
+    ],
+    //Flake8
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=88",
+        "--ignore=W503,E266,E501"
+        //w503: linebreak before binary operator before
+        //E266: too many leading '#' for block comment
+        //flake8 E501: line too long
+    ],
+    //Settings for testing using pytest
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+}
