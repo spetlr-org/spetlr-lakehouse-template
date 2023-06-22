@@ -56,6 +56,7 @@ Considerations: How do we get all attendees on board? (short intro to e.g. CICD)
    * SPETLR can be used for full unit and integration testing of ETL components
    * SPETLR can be used for CI/CD setup
    * Automated deployment
+* [ ] ONE SLIDE - What and why CICD for Databricks Lakehouse platforms? 
 * [ ] ONE SLIDE - We describe the three environments, but do not go into depth around azure deployments.
 * [ ] ONE SLIDE - Orchestrator/ETL structure
 * [ ] ONE SLIDE - Configurator 
