@@ -59,7 +59,7 @@ Considerations: How do we get all attendees on board? (short intro to e.g. CICD)
 * [ ] ONE SLIDE - We describe the three environments, but do not go into depth around azure deployments.
 * [ ] ONE SLIDE - Orchestrator/ETL structure
 * [ ] ONE SLIDE - Configurator 
-* [ ] ONE SLIDE - Unit/Integration testing
+* [ ] ONE SLIDE - Unit/Integration testing (remeber to state why it is important)
 * [ ] ONE SLIDE - CICD (spetlr configurator, PR process, deployment process)
 
 
