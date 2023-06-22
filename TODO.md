@@ -40,3 +40,23 @@ Repo:
     * [ ] Integration test using Configurator
 * [ ] Job folder
   * Minimum one example of dbx configured jobs
+     
+
+Presentation subjects:
+
+10 min slidedeck
+2 min per slide
+
+* [ ] Presentation - SPETLR and the organization behind
+* [ ] ONE SLIDE - our key take-homes
+   * SPETLR can be used as an ETL framework
+   * SPETLR can be used for full unit and integration testing of ETL components
+   * 
+* [ ] ONE SLIDE - We describe the three environments, but do not go into depth around azure deployments.
+* [ ] ONE SLIDE - xxx
+* [ ] ONE SLIDE - xxx
+* [ ] ONE SLIDE - xxx
+* [ ] ONE SLIDE - xxx
+
+
+
