@@ -1,0 +1,1 @@
+. "$PSScriptRoot/Set-KeyVaultSecret.ps1"
