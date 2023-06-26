@@ -12,11 +12,7 @@ param (
   [Parameter(Mandatory=$false)]
   [ValidateNotNullOrEmpty()]
   [string]
-  $pipelineClientId,
-
-  [Parameter(Mandatory=$false)]
-  [string]
-  $uniqueRunId=''
+  $pipelineClientId
 )
 
 # import utility functions

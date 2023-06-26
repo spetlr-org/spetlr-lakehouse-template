@@ -19,7 +19,7 @@ if ($account.name -notmatch "ATC"){
 ####################################################################################
 ## Step 2. Create app registration
 Write-Host "Check if app regisration already exists." -ForegroundColor DarkGreen
-$appRegName = "SpetlrLakehousePipe`"
+$appRegName = "SpetlrLakehousePipe"
 $appId = az ad app list `
   --display-name $appRegName `
   --query [-1].appId `
