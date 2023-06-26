@@ -45,13 +45,17 @@ $resourceTags = @{
   Service='LakeHouse'
   deployedAt="$(Get-Date -Format "o" -AsUTC)"
 }
-
 $resourceTags = ($resourceTags| ConvertTo-Json -Depth 4 -Compress)
 
 $dataLakeContainers = (,@(@{"name"="capture"}))
-
-
 $dataLakeContainersJson = ($dataLakeContainers | ConvertTo-Json -Depth 4 -Compress)
+
+
+if ($IsLinux)
+{
+    $dataLakeContainersJson = $dataLakeContainersJson -replace '"', '\"'
+    $resourceTags = $resourceTags -replace '"', '\"'
+}
 
 $keyVaultName = $resourceName
 
@@ -67,6 +71,5 @@ Write-Host "* Azure Data Lake                 : $dataLakeName" -ForegroundColor 
 Write-Host "* Mounting SPN Name               : $mountSpnName" -ForegroundColor White
 Write-Host "* KeyVault name                   : $keyVaultName" -ForegroundColor White
 Write-Host "**********************************************************************" -ForegroundColor White
-
 
 

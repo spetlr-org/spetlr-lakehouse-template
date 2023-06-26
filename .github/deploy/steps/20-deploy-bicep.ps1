@@ -8,11 +8,11 @@ $output = az deployment sub create `
   --parameters `
       location="$location" `
       keyVaultName="$keyVaultName" `
-      resourceTags="`"$resourceTags`"" `
+      resourceTags="$resourceTags" `
       resourceGroupName="$resourceGroupName" `
       databricksName="$databricksName" `
       dataLakeName="$dataLakeName" `
-      datalakeContainers="`"$dataLakeContainersJson`""
+      datalakeContainers="$dataLakeContainersJson"
 
 
 Throw-WhenError -output $output
