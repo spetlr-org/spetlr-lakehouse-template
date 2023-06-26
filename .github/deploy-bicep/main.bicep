@@ -3,15 +3,16 @@ targetScope = 'subscription'
 
 
 param location string
-param resourceTags object
+param resourceTags string
 param resourceGroupName string
 param databricksName string
 param keyVaultName string
 param dataLakeName string
-param datalakeContainers array
+param datalakeContainers string
 
 
-
+var myDataLakeContainers = json(datalakeContainers)
+var myResouceTags = json(resourceTags)
 
 // Creating integration resource group
 module rgModule2 'rg-lakehouse.bicep' = {
@@ -20,7 +21,7 @@ module rgModule2 'rg-lakehouse.bicep' = {
   params: {
     name: resourceGroupName
     location: location
-    tags: resourceTags
+    tags: myResouceTags
   }
 }
 
@@ -34,8 +35,8 @@ module resources2 'resources-lakehouse.bicep' = {
     keyVaultName: keyVaultName
     location: location
     resourceGroupName: resourceGroupName
-    resourceTags: resourceTags
+    resourceTags: myResouceTags
     dataLakeName: dataLakeName
-    dataLakeContainers: datalakeContainers
+    dataLakeContainers: myDataLakeContainers
   }
 }
