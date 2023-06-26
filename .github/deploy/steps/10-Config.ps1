@@ -22,13 +22,13 @@ $dataLakeName                 = $resourceName
 
 
 # The SPN whose role will be used to access the storage account
-$mountSpnName                 = "SpetlrLh${$ENV}MountSpn"
+$mountSpnName                 = "SpetlrLhMountSpn$environmentName"
 
 # This SPn will be used to deploy databricks
 # The reason fo using a subsidiary SPN for this is that SPN can pull a databricks
 # token from an API with no human in the loop. So if the identity that runs the
 # deployment is a person, using this SPN allows us to still do this.
-$dbDeploySpnName              = "SpetlrLh${$ENV}DbSpn"
+$dbDeploySpnName              = "SpetlrLhDbSpn$environmentName"
 
 # The SPN that runs the github pipeline
 $cicdSpnName                  = "SpetlrLakehousePipe"
