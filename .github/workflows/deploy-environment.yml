@@ -12,6 +12,7 @@ jobs:
     environment: azure-${{ inputs.environmentName }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Log in to azure
         shell: pwsh
         run: |
