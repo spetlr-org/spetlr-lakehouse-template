@@ -5,14 +5,15 @@
 
 ### Deployment Environment (mrmasterplan)
 Create deployment pipeline:
-* [ ] One dev environment
-* [ ] One test environment
-* [ ] One prod environment
+* [x] One dev environment
+* [x] One test environment
+* [x] One prod environment
 
 For each environment Azure ressources:
-* [ ] Resource group
-* [ ] Databricks workspace (+clusters)
-* [ ] Storage account for sample data
+* [x] Resource group
+* [x] Databricks workspace 
+  * [ ] +clusters
+* [x] Storage account for sample data
 
 Other repo stuff:
 * [ ]  In the repo, place simple .csv/.json files.

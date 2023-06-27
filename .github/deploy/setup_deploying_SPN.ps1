@@ -66,7 +66,7 @@ Write-Host "Adding Microsoft graph permissions." -ForegroundColor DarkGreen
 
 # get the permission ID that we need:
 ## this was a detour that did not quite turn up the needed ID
-#$graph = az ad sp list --all --filter "displayName eq 'Microsoft Graph'" | ConvertFrom-Json
+$graph = az ad sp list --all --filter "displayName eq 'Microsoft Graph'" | ConvertFrom-Json
 #$permissions = (az ad sp show --id $graph.appId | ConvertFrom-Json).oauth2PermissionScopes
 #$permission = $permissions | Where-Object {$_.value -eq "Application.ReadWrite.All"}
 
@@ -74,8 +74,11 @@ Write-Host "Adding Microsoft graph permissions." -ForegroundColor DarkGreen
 $permission_id = "18a4783c-866b-4cc7-a460-3d5e5662c884"
 #$permission_id = $permission.id
 
-az ad app permission add --id $appId --api $graph.appId --api-permission "$($permission_id)=Role"
+az ad app permission add --id $appId --api $graph.appId --api-permission "$permission_id=Role"
 az ad app permission grant --id $appId  --api $graph.appId --scope $account.id
+
+Write-Host "The granting of the Graph API permission Application.ReadWrite.OwnedBy does not always work."
+Write-Host "You may have to add this permission from the portal."
 
 # Add the Privileged Role Administrator to the spn
 # This allows it to add the sql server to the role of Directory Reader
