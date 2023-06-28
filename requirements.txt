@@ -1,0 +1,10 @@
+setuptools
+pyspark
+packaging
+pytest
+pyclean
+black
+flake8
+spetlr-tools
+wheel
+azureml
