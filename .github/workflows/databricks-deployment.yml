@@ -1,0 +1,9 @@
+# execute template for each environment
+
+# build
+
+# run databricks-test-template 
+
+# run databricks-deployment-template for dev env
+# run databricks-deployment-template for test env
+# run databricks-deployment-template for prod
