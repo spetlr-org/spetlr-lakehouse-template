@@ -20,27 +20,27 @@ Other repo stuff:
 
 ### Deployment Databricks (JeppeBlixen, farbo, LauJohansson)
 Repo:
-* [ ] Environment folder
+* [x] Environment folder
  * [ ] Databases
   * .sql files with bronze, silver and gold definitions (use spetlr config ids) 
  * [ ] tablenames
    * .yml files with configurator info    
 
-* [ ] Three folders
+* [x] Three folders
   * [ ] Bronze
     * [ ] Orchestrator (w. simple E-T-L steps)
   * [ ] Silver
     * [ ] Orchestrator (w. simple E-T-L steps)
   * [ ] Gold
     * [ ] Orchestrator (w. simple E-T-L steps)
-* [ ] Test folder
-  * [ ] Local
+* [x] Test folder
+  * [x] Local
     * [ ] One transformer test
     * [ ] One TestHandle example
-  * [ ] Cluster
+  * [x] Cluster
     * [ ] Integration test using Configurator
-* [ ] Job folder
-  * Minimum one example of dbx configured jobs
+* [x] Job folder
+  * [x] Minimum one example of dbx configured jobs
      
 
 ### Presentation subjects (mrmasterplan, JeppeBlixen, farbo, LauJohansson)
