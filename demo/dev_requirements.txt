@@ -1,8 +1,0 @@
-setuptools
-pyspark
-packaging
-pytest
-pyclean
-black
-flake8
-atc-dataplatform-tools
