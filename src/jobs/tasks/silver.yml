@@ -1,0 +1,6 @@
+task_key: Silver
+job_cluster_key: StrongCluster1
+<<: *common_task_setting
+python_wheel_task:
+  entry_point: dp_silver
+  package_name: data-platform-demo

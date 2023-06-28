@@ -1,0 +1,6 @@
+task_key: Bronze
+job_cluster_key: StrongCluster1
+<<: *common_task_setting
+python_wheel_task:
+  entry_point: dp_bronze
+  package_name: data-platform-demo

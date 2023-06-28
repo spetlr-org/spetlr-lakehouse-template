@@ -1,0 +1,23 @@
+environments:
+  default:
+    workflows:
+      - name: Setup Mounts
+        tasks:
+          - {{ task_file("setup") }}
+        <<: *multi_task_job_settings
+
+      - name: Example ETL
+        format: MULTI_TASK
+        max_concurrent_runs: 1
+        max_retries: 2
+        tasks:
+          - task_key: Bronze
+            {{ task_file("bronze") }}
+          - depends_on:
+              - task_key: Bronze
+            task_key: Silver
+            {{ task_file("silver") }}
+          - depends_on:
+              - task_key: Silver
+            task_key: Gold
+            {{ task_file("gold") }}
