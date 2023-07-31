@@ -13,10 +13,12 @@ For each environment Azure ressources:
 * [x] Resource group
 * [x] Databricks workspace 
   * [ ] +clusters
+  * [ ] direct access to storage account
 * [x] Storage account for sample data
 
-Other repo stuff:
-* [ ]  In the repo, place simple .csv/.json files.
+### NYC Dataset (LauJohansson)
+* [x]  NYC dataset in repo
+* [x]  NYC dataset in dev, test, prod
 
 ### Deployment Databricks (JeppeBlixen, farbo, LauJohansson)
 Repo:
