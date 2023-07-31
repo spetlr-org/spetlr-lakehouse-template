@@ -1,7 +1,7 @@
--- atc.configurator key: SilverDemoDB
+-- spetlr.configurator key: SilverDemoDB
 CREATE DATABASE IF NOT EXISTS silver_demo{ID};
 
--- atc.configurator key: SilverDemoTable
+-- spetlr.configurator key: SilverDemoTable
 CREATE TABLE IF NOT EXISTS {SilverDemoDB_name}.silver_demo(
   Id BIGINT,
   EventTimestamp TIMESTAMP,
