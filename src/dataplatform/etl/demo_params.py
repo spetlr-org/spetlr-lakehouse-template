@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 
 import pyspark.sql.types as T
-from atc.delta.delta_handle import DeltaHandle
-from atc.schema_manager import SchemaManager
-from atc.tables import TableHandle
+from spetlr.delta.delta_handle import DeltaHandle
+from spetlr.schema_manager import SchemaManager
+from spetlr.tables import TableHandle
 
 
 @dataclass
