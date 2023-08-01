@@ -1,5 +1,5 @@
 
-name: Resource-Deployment
+name: Deployment-Application
 
 on:
   workflow_call:
@@ -13,6 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+
       - name: Log in to azure
         shell: pwsh
         run: |
@@ -20,9 +25,18 @@ jobs:
             -u ${{ secrets.SPN_CLIENT_ID }} `
             -p ${{ secrets.SPN_CLIENT_SECRET }} `
             --tenant ${{ secrets.SPN_TENANT_ID }}
-      - name: Create Deployment
+
+      - name: Connect to Databricks
         shell: pwsh
         run: |
-          .github/deploy/deploy_resources.ps1 `
-            -pipelineClientId ${{ secrets.SPN_CLIENT_ID }} `
+          .github/deploy/connect_DB_api.ps1 `
             -environmentName "${{ inputs.environmentName }}"
+
+      - name: Azure logout
+        shell: pwsh
+        run: az logout
+
+
+
+
+

@@ -1,27 +1,23 @@
 name: Resource-Deployment
 
 on:
-  # workflow_dispatch allows re-run if needed
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   Deploy-DEV-Environment:
-    uses: ./.github/workflows/deploy-environment.yml
+    uses: ./.github/workflows/templates/deploy-environment.yml
     with:
       environmentName: dev
     secrets: inherit
   Deploy-TEST-Environment:
     needs: Deploy-DEV-Environment
-    uses: ./.github/workflows/deploy-environment.yml
+    uses: ./.github/workflows/templates/deploy-environment.yml
     with:
       environmentName: test
     secrets: inherit
   Deploy-PROD-Environment:
     needs: Deploy-TEST-Environment
-    uses: ./.github/workflows/deploy-environment.yml
+    uses: ./.github/workflows/templates/deploy-environment.yml
     with:
       environmentName: prod
     secrets: inherit

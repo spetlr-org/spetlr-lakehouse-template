@@ -1,0 +1,28 @@
+
+name: Deployment-Environment
+
+on:
+  workflow_call:
+    inputs:
+      environmentName:
+        required: true
+        type: string
+jobs:
+  deploy_environment:
+    environment: azure-${{ inputs.environmentName }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Log in to azure
+        shell: pwsh
+        run: |
+          az login --service-principal `
+            -u ${{ secrets.SPN_CLIENT_ID }} `
+            -p ${{ secrets.SPN_CLIENT_SECRET }} `
+            --tenant ${{ secrets.SPN_TENANT_ID }}
+      - name: Create Deployment
+        shell: pwsh
+        run: |
+          .github/deploy/deploy_resources.ps1 `
+            -pipelineClientId ${{ secrets.SPN_CLIENT_ID }} `
+            -environmentName "${{ inputs.environmentName }}"

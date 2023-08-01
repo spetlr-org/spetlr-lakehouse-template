@@ -1,8 +1,0 @@
-# isort --check
-# black --check
-# flake8 --check
-
-# run local test (on agent)
-
-# run cluster tests (submitted to databricks)
-
