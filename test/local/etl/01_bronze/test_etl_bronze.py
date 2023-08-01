@@ -1,12 +1,11 @@
 import unittest
 
-from atc.schema_manager import SchemaManager
-from atc.spark import Spark
-from atc_tools.testing import DataframeTestCase
-from atc_tools.testing.TestHandle import TestHandle
+from spetlr.schema_manager import SchemaManager
+from spetlr.spark import Spark
+from spetlr_tools.testing import DataframeTestCase
+from spetlr_tools.testing.TestHandle import TestHandle
 
 from dataplatform.etl import DemoEtl, DemoParams
-
 
 """class Test_DemoEtl(DataframeTestCase):
     def test_demo_etl(self):
