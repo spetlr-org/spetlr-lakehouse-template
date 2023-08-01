@@ -7,3 +7,4 @@
 . "$PSScriptRoot/Copy-DatabricksSecrets.ps1"
 . "$PSScriptRoot/ConvertTo-Base64String.ps1"
 . "$PSScriptRoot/DatabricksSecretsManager.ps1"
+. "$PSScriptRoot/New-DatabricksInstancePool.ps1"

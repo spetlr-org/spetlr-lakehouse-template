@@ -15,13 +15,16 @@ param (
   $pipelineClientId
 )
 
+# get the true repository root
+$repoRoot = (git rev-parse --show-toplevel)
+
 # import utility functions
-. "$PSScriptRoot/Utilities/all.ps1"
+. "$repoRoot/.github/deploy/Utilities/all.ps1"
 
 ###############################################################################################
 # Execute steps in order
 ###############################################################################################
 
-Get-ChildItem "$PSScriptRoot/steps" -Filter *.ps1 | Sort-Object name | Foreach-Object {
+Get-ChildItem "$repoRoot/.github/deploy/steps" -Filter *.ps1 | Sort-Object name | Foreach-Object {
   . ("$_")
 }
