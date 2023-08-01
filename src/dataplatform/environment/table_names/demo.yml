@@ -1,0 +1,26 @@
+DemoSource:
+  path: capture/data/NYC_TLC_dataset.csv
+
+DemoBronzeDb:
+  name: BronzeNycTlc{ID}
+  path: /{MNT}/spetlrlh{ENV}/bronze/nyc_tlc_db{ID}
+
+DemoBronzeTable:
+  name: "{DemoBronzeDb}.nyc_tlc"
+  path: "{DemoBronzeDb_path}/nyc_tlc"
+
+DemoSilverDb:
+  name: SilverNycTlc{ID}
+  path: /{MNT}/spetlrlh{ENV}/silver/nyc_tlc_db{ID}
+
+DemoSilverTable:
+  name: "{DemoSilverDb}.nyc_tlc"
+  path: "{DemoSilverDb_path}/nyc_tlc"
+
+DemoGoldDb:
+  name: GoldNycTlc{ID}
+  path: /{MNT}/spetlrlh{ENV}/gold/nyc_tlc_db{ID}
+
+DemoGoldTable:
+  name: "{DemoGoldDb}.nyc_tlc"
+  path: "{DemoGoldDb_path}/nyc_tlc"
