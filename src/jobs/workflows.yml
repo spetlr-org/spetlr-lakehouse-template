@@ -21,3 +21,8 @@ environments:
               - task_key: Silver
             task_key: Gold
             {{ task_file("gold") }}
+        schedule:
+          # every day at 03UTC
+          quartz_cron_expression: "0 0 3 * * ?"
+          timezone_id: "UTC"
+          pause_status: "PAUSED"

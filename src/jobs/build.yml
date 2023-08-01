@@ -1,0 +1,6 @@
+
+# documentation for the build section:
+# https://dbx.readthedocs.io/en/latest/features/build_management/
+build:
+  python: "pip"
+

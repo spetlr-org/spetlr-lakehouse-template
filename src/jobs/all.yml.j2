@@ -1,7 +1,9 @@
 
+
 {% macro _get_task_file(name) %}{% include "tasks/"+name+".yml" %}{% endmacro %}
 {% macro task_file(name) %}{{ _get_task_file(name) | indent(12) }}{% endmacro %}
 
+{% include 'build.yml' %}
 {% include 'clusters.yml' %}
 {% include 'workflows.yml' %}
 

@@ -16,7 +16,7 @@ custom:
     spot_bid_max_price: -1
 
   basic-cluster-general: &basic-cluster-general
-    spark_version: "11.3.x-scala2.12"
+    spark_version: "12.2.x-scala2.12"
     spark_conf: *spark-conf-basic
     azure_attributes: *azure-attributes
     spark_env_vars:
@@ -25,25 +25,13 @@ custom:
 
 
   basic-cluster-single: &basic-cluster-single
-    spark_version: "11.3.x-scala2.12"
+    spark_version: "12.2.x-scala2.12"
     spark_conf: *spark-conf-single
     azure_attributes: *azure-attributes
     spark_env_vars:
       PYSPARK_PYTHON: /databricks/python3/bin/python3
     instance_pool_name: "Standard L4s instances runtime"
     num_workers: 0
-
-  dp_libraries: &dp_libraries
-    libraries:
-      - maven:
-          coordinates: com.microsoft.azure:spark-mssql-connector_2.12:1.2.0
-      - maven:
-          coordinates: com.microsoft.azure:azure-eventhubs-spark_2.12:2.3.22
-      - maven:
-          coordinates: com.azure.cosmos.spark:azure-cosmos-spark_3-1_2-12:4.12.2
-          
-      - whl: dbfs:/FileStore/jars/python/data_platform_demo/data_platform_demo-1.0-py3-none-any.whl
-
 
 
   common_task_setting: &common_task_setting
