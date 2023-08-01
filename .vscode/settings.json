@@ -1,17 +1,16 @@
 {
-    "jupyter.defaultCellMarker": "# COMMAND ----------",
-    //Format when saving
     "editor.formatOnSave": true,
     "[python]": {
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
-        }
+        },
+        "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "[sql]": {
         "editor.formatOnSave": false
     },
     //Black
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "none",
     "python.formatting.blackArgs": [
         "--line-length=88"
     ],
@@ -37,4 +36,5 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
+    "jupyter.interactiveWindow.cellMarker.default": "# COMMAND ----------",
 }
