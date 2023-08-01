@@ -2,6 +2,8 @@
 
 ## Scope for lakehouse demo project
 
+### README
+[ ] Use spetlr slides as template for what this project provide (CICD, unit test, integration etc.)
 
 ### Deployment Environment (mrmasterplan)
 Create deployment pipeline:
