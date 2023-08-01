@@ -47,7 +47,7 @@ $resourceTags = @{
 }
 $resourceTags = ($resourceTags| ConvertTo-Json -Depth 4 -Compress)
 
-$dataLakeContainers = (,@(@{"name"="capture"}))
+$dataLakeContainers = (, @(@{"name" = "capture" }, @{"name" = "bronze" }, @{"name" = "silver" }, @{"name" = "gold" }))
 $dataLakeContainersJson = ($dataLakeContainers | ConvertTo-Json -Depth 4 -Compress)
 
 
@@ -68,6 +68,10 @@ Write-Host "* Resource Name                   : $resourceName" -ForegroundColor 
 Write-Host "* location                        : $location" -ForegroundColor White
 Write-Host "* Azure Databricks Workspace      : $databricksName" -ForegroundColor White
 Write-Host "* Azure Data Lake                 : $dataLakeName" -ForegroundColor White
+foreach ($container in $dataLakeContainers.Values) { 
+ 
+  Write-Host "*   Container                     : $container" -ForegroundColor White
+}
 Write-Host "* Mounting SPN Name               : $mountSpnName" -ForegroundColor White
 Write-Host "* KeyVault name                   : $keyVaultName" -ForegroundColor White
 Write-Host "**********************************************************************" -ForegroundColor White
