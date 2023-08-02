@@ -1,12 +1,12 @@
 from spetlr.sql.SqlExecutor import SqlExecutor
 
-from dataplatform.environment import bronze, gold, silver
+from dataplatform.environment import databases
 
 
 def setup_environment():
-    print("Creating 01_bronze")
-    SqlExecutor(base_module=bronze).execute_sql_file("*")
-    print("Creating 02_silver")
-    SqlExecutor(base_module=silver).execute_sql_file("*")
-    print("Creating 03_gold")
-    SqlExecutor(base_module=gold).execute_sql_file("*")
+    print("Creating bronze NYC TLC databases and tables")
+    SqlExecutor(base_module=databases).execute_sql_file("nyc_tlc_bronze.sql")
+    print("Creating silver NYC TLC databases and tables")
+    SqlExecutor(base_module=databases).execute_sql_file("nyc_tlc_silver.sql")
+    print("Creating gold NYC TLC databases and tables")
+    SqlExecutor(base_module=databases).execute_sql_file("nyc_tlc_gold.sql")

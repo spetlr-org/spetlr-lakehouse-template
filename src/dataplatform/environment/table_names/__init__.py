@@ -1,12 +1,11 @@
 from spetlr import Configurator
 
-from dataplatform.environment import bronze, gold, silver
+from dataplatform.environment import databases
 
 
-def initConfigurator():
-    tc = Configurator()
-    tc.register("ENV", "prod")
+def init_configurator():
+    c = Configurator()
+    c.register("ENV", "dev", "test", "prod")
+    c.add_sql_resource_path(databases)
 
-    tc.add_sql_resource_path(bronze)
-    tc.add_sql_resource_path(silver)
-    tc.add_sql_resource_path(gold)
+    return c
