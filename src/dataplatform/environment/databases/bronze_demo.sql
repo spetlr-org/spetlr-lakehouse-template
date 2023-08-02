@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS {DemoBronzeDb};
 
 CREATE TABLE IF NOT EXISTS {DemoBronzeTable} (
-  vendorID STRING,
+  vendorID INTEGER,
   tpepPickupDateTime TIMESTAMP,
   tpepDropoffDateTime TIMESTAMP,
   passengerCount INTEGER,

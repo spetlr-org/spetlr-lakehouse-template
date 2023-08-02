@@ -1,26 +1,26 @@
-DemoSource:
+NycTlcSource:
   path: capture/data/NYC_TLC_dataset.csv
 
-DemoBronzeDb:
-  name: BronzeNycTlc{ID}
-  path: /{MNT}/spetlrlh{ENV}/bronze/nyc_tlc_db{ID}
+NycTlcBronzeDb:
+  name: nyc_tlc_bronze{ID}
+  path: /{MNT}/spetlrlh{ENV}/bronze/nyc_tlc_bronze{ID}
 
-DemoBronzeTable:
-  name: "{DemoBronzeDb}.nyc_tlc"
-  path: "{DemoBronzeDb_path}/nyc_tlc"
+NycTlcBronzeTable:
+  name: "{NycTlcBronzeDb}.nyc_tlc"
+  path: "{NycTlcBronzeDb_path}/nyc_tlc"
 
-DemoSilverDb:
-  name: SilverNycTlc{ID}
-  path: /{MNT}/spetlrlh{ENV}/silver/nyc_tlc_db{ID}
+NycTlcSilverDb:
+  name: nyc_tlc_silver{ID}
+  path: /{MNT}/spetlrlh{ENV}/silver/nyc_tlc_silver{ID}
 
-DemoSilverTable:
-  name: "{DemoSilverDb}.nyc_tlc"
-  path: "{DemoSilverDb_path}/nyc_tlc"
+NycTlcSilverTable:
+  name: "{NycTlcSilverDb}.nyc_tlc"
+  path: "{NycTlcSilverDb_path}/nyc_tlc"
 
-DemoGoldDb:
-  name: GoldNycTlc{ID}
-  path: /{MNT}/spetlrlh{ENV}/gold/nyc_tlc_db{ID}
+NycTlcGoldDb:
+  name: nyc_tlc_gold{ID}
+  path: /{MNT}/spetlrlh{ENV}/gold/nyc_tlc_gold{ID}
 
-DemoGoldTable:
-  name: "{DemoGoldDb}.nyc_tlc"
-  path: "{DemoGoldDb_path}/nyc_tlc"
+NycTlcGoldTable:
+  name: "{NycTlcGoldDb}.nyc_tlc"
+  path: "{NycTlcGoldDb_path}/nyc_tlc"
