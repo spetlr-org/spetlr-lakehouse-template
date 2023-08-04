@@ -15,12 +15,13 @@ class NycTlcSilverTransfomer(Transformer):
     def process(self, df: DataFrame) -> DataFrame:
         df = df.withColumn(
             "paymentType",
-            f.when(f.col("paymentType") == 1, "Credit")
-            .when(f.col("paymentType") == 2, "Cash")
-            .when(f.col("paymentType") == 3, "No charge")
-            .when(f.col("paymentType") == 4, "Dispute")
-            .when(f.col("paymentType") == 5, "Unknown")
-            .when(f.col("paymentType") == 6, "Voided trip"),
+            f.when(f.col("paymentType") == "1", "Credit")
+            .when(f.col("paymentType") == "2", "Cash")
+            .when(f.col("paymentType") == "3", "No charge")
+            .when(f.col("paymentType") == "4", "Dispute")
+            .when(f.col("paymentType") == "5", "Unknown")
+            .when(f.col("paymentType") == "6", "Voided trip")
+            .otherwise("Undefined"),
         )
 
         df_final = df.select(
