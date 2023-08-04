@@ -18,7 +18,7 @@ class NycTlcGoldTransfomer(Transformer):
                 f.sum("passengerCount").alias("TotalPassengers"),
                 f.sum("tripDistance").alias("TotalTripDistance"),
                 f.sum("tipAmount").alias("TotalTipAmount"),
-                f.sum("tipAmount").alias("TotalPaidAmount"),
+                f.sum("totalAmount").alias("TotalPaidAmount"),
             )
         )
         df_final = df.select(

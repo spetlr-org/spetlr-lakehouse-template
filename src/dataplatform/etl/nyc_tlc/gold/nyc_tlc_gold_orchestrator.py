@@ -5,7 +5,7 @@ from dataplatform.etl.nyc_tlc.gold.nyc_tlc_gold_parameters import NycTlcGoldPara
 from dataplatform.etl.nyc_tlc.gold.nyc_tlc_gold_transformer import NycTlcGoldTransfomer
 
 
-class NycTlcSilverOrchestrator(Orchestrator):
+class NycTlcGoldOrchestrator(Orchestrator):
     def __init__(self, params: NycTlcGoldParameters = None):
         super().__init__()
 
