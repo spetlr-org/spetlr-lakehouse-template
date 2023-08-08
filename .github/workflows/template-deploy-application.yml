@@ -40,5 +40,6 @@ jobs:
 
       - name: Deploy Application
         shell: pwsh
-        run: .github/application/deploy.ps1
+        run: .github/application/deploy.ps1 `
+            -environmentName "${{ inputs.environmentName }}"
 

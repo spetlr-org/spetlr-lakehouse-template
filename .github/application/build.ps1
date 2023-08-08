@@ -1,4 +1,16 @@
 
+param (
+  [Parameter(Mandatory=$true)]
+  [ValidateNotNullOrEmpty()]
+  [string]
+  $environmentName,
+
+  [Parameter(Mandatory=$false)]
+  [ValidateNotNullOrEmpty()]
+  [string]
+  $buildId="0"
+)
+
 $repoRoot = (git rev-parse --show-toplevel)
 
 Push-Location -Path $repoRoot
@@ -18,6 +30,10 @@ if (Test-Path -Path src\*.egg-info)
 }
 
 pyclean -v .
+
+. "$repoRoot/tools/set_lib_env.ps1" `
+    -buildId "0" `
+    -environmentName $environmentName
 
 python setup.py bdist_wheel
 

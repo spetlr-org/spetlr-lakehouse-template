@@ -1,3 +1,14 @@
+param (
+  [Parameter(Mandatory=$true)]
+  [ValidateNotNullOrEmpty()]
+  [string]
+  $environmentName,
+
+  [Parameter(Mandatory=$false)]
+  [ValidateNotNullOrEmpty()]
+  [string]
+  $buildId="0"
+)
 
 $repoRoot = (git rev-parse --show-toplevel)
 
@@ -8,6 +19,10 @@ Push-Location -Path $repoRoot
 Write-Host "Now Installing Build Dependencies"
 python -m pip install --upgrade pip
 pip install -r requirements-deploy.txt
+
+. "$repoRoot/tools/set_lib_env.ps1" `
+    -buildId "0" `
+    -environmentName $environmentName
 
 # Step 1 Build
 Write-Host "Now Building"

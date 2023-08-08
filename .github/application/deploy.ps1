@@ -1,4 +1,14 @@
+param (
+  [Parameter(Mandatory=$true)]
+  [ValidateNotNullOrEmpty()]
+  [string]
+  $environmentName,
 
+  [Parameter(Mandatory=$false)]
+  [ValidateNotNullOrEmpty()]
+  [string]
+  $buildId="0"
+)
 
 $repoRoot = (git rev-parse --show-toplevel)
 
@@ -12,6 +22,10 @@ pip install -r requirements-deploy.txt
 
 # Step 1 Build
 Write-Host "Now Deploying"
+
+. "$repoRoot/tools/set_lib_env.ps1" `
+    -buildId "0" `
+    -environmentName $environmentName
 
 dbx deploy --deployment-file=src/jobs/all.yml.j2
 
