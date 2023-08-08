@@ -33,3 +33,4 @@ Set-KeyVaultSecret -key "Databricks--AuthEndpoint" -value "https://login.microso
 Set-KeyVaultSecret -key "Databricks--ClientId" -value $mountSpn.clientId -keyVaultName $keyVaultName
 Set-KeyVaultSecret -key "Databricks--ClientSecret" -value $mountSpn.secretText -keyVaultName $keyVaultName
 
+
