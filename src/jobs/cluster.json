@@ -1,11 +1,10 @@
 {
-  "spark_version": "12.2.x-scala2.12",
+  "spark_version": "11.3.x-scala2.12",
   "spark_conf": {
     "spark.databricks.cluster.profile": "singleNode",
     "spark.master": "local[*, 4]",
     "spark.databricks.delta.preview.enabled": true,
     "spark.databricks.io.cache.enabled": true
-
   },
   "azure_attributes": {
     "availability": "ON_DEMAND_AZURE",

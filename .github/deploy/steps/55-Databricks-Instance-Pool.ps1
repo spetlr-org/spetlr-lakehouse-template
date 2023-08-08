@@ -13,7 +13,7 @@ Write-Host "  Creating: $name" -ForegroundColor DarkYellow
 $computeClusterPoolId = New-DatabricksInstancePool `
   -name $name `
   -clusterNodeType "Standard_L8s" `
-  -sparkVersion "12.2.x-scala2.12" `
+  -sparkVersion "11.3.x-scala2.12" `
   -maxCapacity 40
 
 Throw-WhenError -output $computeClusterPoolId
