@@ -22,21 +22,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install black isort flake8
       - name: Black
-        shell: black --check .
+        shell: pwsh
+        run: black --check .
       - name: iSort
-        shell: isort --check .
+        shell: pwsh
+        run: isort --check .
       - name: Flake8
-        shell: flake8 .
+        shell: pwsh
+        run: flake8 .
 
   Test-DEV-Environment:
     needs: Linting
-    uses: ./.github/workflows/templates/test-applicaiton.yml
+    uses: ./.github/workflows/template-test-applicaiton.yml
     with:
       environmentName: dev
     secrets: inherit
   Test-TEST-Environment:
     needs: Linting
-    uses: ./.github/workflows/templates/test-applicaiton.yml
+    uses: ./.github/workflows/template-test-applicaiton.yml
     with:
       environmentName: test
     secrets: inherit

@@ -7,19 +7,19 @@ on:
 
 jobs:
   Deploy-DEV-Application:
-    uses: ./.github/workflows/templates/deploy-application.yml
+    uses: ./.github/workflows/template-deploy-application.yml
     with:
       environmentName: dev
     secrets: inherit
   Deploy-TEST-Application:
     needs: Deploy-DEV-Application
-    uses: ./.github/workflows/templates/deploy-application.yml
+    uses: ./.github/workflows/template-deploy-application.yml
     with:
       environmentName: test
     secrets: inherit
   Deploy-PROD-Application:
     needs: Deploy-TEST-Application
-    uses: ./.github/workflows/templates/deploy-application.yml
+    uses: ./.github/workflows/template-deploy-application.yml
     with:
       environmentName: prod
     secrets: inherit
