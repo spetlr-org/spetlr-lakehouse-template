@@ -4,25 +4,8 @@
     "spark.databricks.cluster.profile": "singleNode",
     "spark.master": "local[*, 4]",
     "spark.databricks.delta.preview.enabled": true,
-    "spark.databricks.io.cache.enabled": true,
+    "spark.databricks.io.cache.enabled": true
 
-    "fs.azure.account.auth.type.spetlrlhdev.dfs.core.windows.net": "OAuth",
-    "fs.azure.account.oauth.provider.type.spetlrlhdev.dfs.core.windows.net": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
-    "fs.azure.account.oauth2.client.id.spetlrlhdev.dfs.core.windows.net": "{{secrets/spetlrlhdev/Databricks--ClientId}}",
-    "fs.azure.account.oauth2.client.secret.spetlrlhdev.dfs.core.windows.net": "{{secrets/spetlrlhdev/Databricks--ClientSecret}}",
-    "fs.azure.account.oauth2.client.endpoint.spetlrlhdev.dfs.core.windows.net": "{{secrets/spetlrlhdev/Databricks--AuthEndpoint}}",
-
-    "fs.azure.account.auth.type.spetlrlhtest.dfs.core.windows.net": "OAuth",
-    "fs.azure.account.oauth.provider.type.spetlrlhtest.dfs.core.windows.net": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
-    "fs.azure.account.oauth2.client.id.spetlrlhtest.dfs.core.windows.net": "{{secrets/spetlrlhtest/Databricks--ClientId}}",
-    "fs.azure.account.oauth2.client.secret.spetlrlhtest.dfs.core.windows.net": "{{secrets/spetlrlhtest/Databricks--ClientSecret}}",
-    "fs.azure.account.oauth2.client.endpoint.spetlrlhtest.dfs.core.windows.net": "{{secrets/spetlrlhtest/Databricks--AuthEndpoint}}",
-
-    "fs.azure.account.auth.type.spetlrlhprod.dfs.core.windows.net": "OAuth",
-    "fs.azure.account.oauth.provider.type.spetlrlhprod.dfs.core.windows.net": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
-    "fs.azure.account.oauth2.client.id.spetlrlhprod.dfs.core.windows.net": "{{secrets/spetlrlhprod/Databricks--ClientId}}",
-    "fs.azure.account.oauth2.client.secret.spetlrlhprod.dfs.core.windows.net": "{{secrets/spetlrlhprod/Databricks--ClientSecret}}",
-    "fs.azure.account.oauth2.client.endpoint.spetlrlhprod.dfs.core.windows.net": "{{secrets/spetlrlhprod/Databricks--AuthEndpoint}}"
   },
   "azure_attributes": {
     "availability": "ON_DEMAND_AZURE",

@@ -9,3 +9,5 @@ isort
 flake8
 dbx
 spetlr-tools
+jinja2
+jinja-cli

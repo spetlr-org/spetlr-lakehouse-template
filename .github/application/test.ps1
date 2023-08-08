@@ -19,7 +19,7 @@ Write-Host "Now Submitting"
 spetlr-test-job submit `
               --tests test/ `
               --tasks-from test/cluster/ `
-              --cluster-file src/jobs/cluster.json `
+              --cluster-file src/jobs/cluster_env.json `
               --requirements-file requirements-test.txt `
               --sparklibs-file src/jobs/sparklibs.json `
               --out-json test.json

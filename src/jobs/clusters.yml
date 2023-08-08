@@ -1,6 +1,9 @@
 
 custom:
+  spark-conf-auth: &spark-conf-auth {% include 'sparkconf.json.j2' %}
+
   spark-conf-basic: &spark-conf-basic
+    <<: *spark-conf-auth
     spark.databricks.io.cache.enabled: true
     spark.databricks.delta.preview.enabled: true
     spark.databricks.delta.schema.autoMerge.enabled: true
