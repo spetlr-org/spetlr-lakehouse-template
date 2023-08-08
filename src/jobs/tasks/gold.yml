@@ -1,6 +1,8 @@
 task_key: Gold
-job_cluster_key: StrongCluster1
+job_cluster_key: SmallCluster1
 <<: *common_task_setting
 python_wheel_task:
-  entry_point: dp_gold
-  package_name: data-platform-demo
+  entry_point: spetlr
+  package_name: spetlr_task
+  named_parameters:
+    entry_point: dataplatform.etl.03_gold.main:main

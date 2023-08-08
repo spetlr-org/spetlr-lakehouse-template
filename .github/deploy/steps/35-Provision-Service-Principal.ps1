@@ -28,7 +28,8 @@ $dbSpn = Get-SpnWithSecret -spnName $dbDeploySpnName -keyVaultName $keyVaultName
 
 $mountSpn = Get-SpnWithSecret -spnName $mountSpnName -keyVaultName $keyVaultName
 
-Set-KeyVaultSecret -key "Databricks--TenantId" -value $tenantId -keyVaultName $keyVaultName
+#Set-KeyVaultSecret -key "Databricks--TenantId" -value $tenantId -keyVaultName $keyVaultName
+Set-KeyVaultSecret -key "Databricks--AuthEndpoint" -value "https://login.microsoftonline.com/$tenantId/oauth2/token" -keyVaultName $keyVaultName
 Set-KeyVaultSecret -key "Databricks--ClientId" -value $mountSpn.clientId -keyVaultName $keyVaultName
 Set-KeyVaultSecret -key "Databricks--ClientSecret" -value $mountSpn.secretText -keyVaultName $keyVaultName
 

@@ -2,5 +2,7 @@ task_key: Silver
 job_cluster_key: StrongCluster1
 <<: *common_task_setting
 python_wheel_task:
-  entry_point: dp_silver
-  package_name: data-platform-demo
+  entry_point: spetlr
+  package_name: spetlr_task
+  named_parameters:
+    entry_point: dataplatform.etl.02_silver.main:main

@@ -1,5 +1,5 @@
 
-name: Resource-Deployment
+name: Deployment-Environment
 
 on:
   workflow_call:
