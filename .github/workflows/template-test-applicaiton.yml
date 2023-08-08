@@ -39,5 +39,6 @@ jobs:
 
       - name:  Test job
         shell: pwsh
-        run: .github/application/test.ps1 `
+        run: |
+          .github/application/test.ps1 `
             -environmentName "${{ inputs.environmentName }}"
