@@ -11,16 +11,16 @@ environments:
         max_concurrent_runs: 1
         max_retries: 2
         tasks:
-          - task_key: Bronze
+          - task_key: NycTlcBronze
             {{ task_file("bronze") }}
-          - depends_on:
-              - task_key: Bronze
-            task_key: Silver
+          - task_key: NycTlcSilver
             {{ task_file("silver") }}
           - depends_on:
-              - task_key: Silver
-            task_key: Gold
+              - task_key: NycTlcBronze
+          - task_key: NycTlcGold
             {{ task_file("gold") }}
+          - depends_on:
+              - task_key: NycTlcSilver
         schedule:
           # every day at 03UTC
           quartz_cron_expression: "0 0 3 * * ?"
