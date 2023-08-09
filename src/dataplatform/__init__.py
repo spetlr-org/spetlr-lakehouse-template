@@ -1,3 +1,3 @@
-from .environment import initConfigurator
+from .environment.init_configurator import init_configurator
 
-initConfigurator()
+init_configurator()
