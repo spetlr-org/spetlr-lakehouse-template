@@ -2,7 +2,7 @@ import unittest
 
 from spetlr.schema_manager import SchemaManager
 from spetlr.utils import DataframeCreator
-from spetlr_tools.testing import DataframeTestCase
+from spetlrtools.testing import DataframeTestCase
 
 from dataplatform.etl import MyFilterTransformer
 
