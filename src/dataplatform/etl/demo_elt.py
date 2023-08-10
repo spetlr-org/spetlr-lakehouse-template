@@ -1,10 +1,10 @@
-from atc.etl import Orchestrator
-from atc.etl.extractors import SimpleExtractor
-from atc.etl.loaders import SimpleLoader
-from atc.transformers import (
+from spetlr.etl import Orchestrator
+from spetlr.etl.extractors import SimpleExtractor
+from spetlr.etl.loaders import SimpleLoader
+from spetlr.transformers import (
     SelectAndCastColumnsTransformerNC as SelectAndCastColumnsTransformer,
 )
-from atc.transformers import UnionTransformerNC as UnionTransformer
+from spetlr.transformers import UnionTransformerNC as UnionTransformer
 
 from .demo_params import DemoParams
 from .my_filter_transformer import MyFilterTransformer

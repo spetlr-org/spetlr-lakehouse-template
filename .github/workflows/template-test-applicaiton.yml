@@ -8,7 +8,7 @@ on:
         required: true
         type: string
 jobs:
-  test_application:
+  test_cluster:
     environment: azure-${{ inputs.environmentName }}
     runs-on: ubuntu-latest
     steps:
@@ -33,7 +33,7 @@ jobs:
           .github/deploy/connect_DB_api.ps1 `
             -environmentName "${{ inputs.environmentName }}"
 
-      - name:  Test job
+      - name:  Cluster Test job (integrationtest)
         shell: pwsh
         run: |
           .github/application/test.ps1 `
