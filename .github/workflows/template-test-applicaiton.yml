@@ -8,7 +8,7 @@ on:
         required: true
         type: string
 jobs:
-  test_application:
+  test_cluster:
     environment: azure-${{ inputs.environmentName }}
     runs-on: ubuntu-latest
     steps:

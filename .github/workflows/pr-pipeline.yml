@@ -31,28 +31,28 @@ jobs:
         shell: pwsh
         run: flake8 .
 
-  Local-Test-DEV-Environment:
+  LocalTest-DEV-Environment:
     needs: Linting
     uses: ./.github/workflows/template-unittest.yml
     with:
       environmentName: dev
     secrets: inherit
 
-  Local-Test-TEST-Environment:
+  LocalTest-TEST-Environment:
     needs: Linting
     uses: ./.github/workflows/template-unittest.yml
     with:
       environmentName: test
     secrets: inherit
 
-  Cluster-Test-DEV-Environment:
-    needs: Local-Test-DEV-Environment
+  ClusterTest-DEV-Environment:
+    needs: LocalTest-DEV-Environment
     uses: ./.github/workflows/template-test-applicaiton.yml
     with:
       environmentName: dev
     secrets: inherit
-  Cluster-Test-TEST-Environment:
-    needs: Local-Test-TEST-Environment
+  ClusterTest-TEST-Environment:
+    needs: LocalTest-TEST-Environment
     uses: ./.github/workflows/template-test-applicaiton.yml
     with:
       environmentName: test
