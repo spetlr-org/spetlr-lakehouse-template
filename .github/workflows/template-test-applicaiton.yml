@@ -1,0 +1,46 @@
+
+name: Test-Application
+
+on:
+  workflow_call:
+    inputs:
+      environmentName:
+        required: true
+        type: string
+jobs:
+  test_application:
+    environment: azure-${{ inputs.environmentName }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Log in to azure
+        shell: pwsh
+        run: |
+          az login --service-principal `
+            -u ${{ secrets.SPN_CLIENT_ID }} `
+            -p ${{ secrets.SPN_CLIENT_SECRET }} `
+            --tenant ${{ secrets.SPN_TENANT_ID }}
+            
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+
+      - name: Connect to Databricks
+        shell: pwsh
+        run: |
+          .github/deploy/connect_DB_api.ps1 `
+            -environmentName "${{ inputs.environmentName }}"
+
+      - name:  Test job
+        shell: pwsh
+        run: |
+          .github/application/test.ps1 `
+            -environmentName "${{ inputs.environmentName }}"
+
+      - name: Azure logout
+        shell: pwsh
+        run: az logout
+
+      
