@@ -3,7 +3,8 @@ import unittest
 from spetlrtools.testing import DataframeTestCase
 from spetlrtools.testing.TestHandle import TestHandle
 
-from dataplatform.etl import DemoEtl, DemoParams
+from dataplatform.etl.demo_elt import DemoEtl
+from dataplatform.etl.demo_params import DemoParams
 
 
 class Test_DemoEtl(DataframeTestCase):
