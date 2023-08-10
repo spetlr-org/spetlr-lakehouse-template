@@ -1,7 +1,7 @@
 import unittest
 
-from atc_tools.testing import DataframeTestCase
-from atc_tools.testing.TestHandle import TestHandle
+from spetlrtools.testing import DataframeTestCase
+from spetlrtools.testing.TestHandle import TestHandle
 
 from dataplatform.etl import DemoEtl, DemoParams
 
