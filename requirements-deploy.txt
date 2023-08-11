@@ -8,6 +8,6 @@ black
 isort
 flake8
 dbx
-spetlr-tools
+spetlr-tools==0.1.39
 jinja2
 jinja-cli
