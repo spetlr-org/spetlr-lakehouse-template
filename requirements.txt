@@ -5,7 +5,7 @@ pytest
 pyclean
 black
 flake8
-spetlr-tools
+spetlr-tools==0.1.39
 wheel
 azureml
 azureml-opendatasets
