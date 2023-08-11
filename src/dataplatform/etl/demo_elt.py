@@ -6,8 +6,8 @@ from spetlr.transformers import (
 )
 from spetlr.transformers import UnionTransformerNC as UnionTransformer
 
-from .demo_params import DemoParams
-from .my_filter_transformer import MyFilterTransformer
+from dataplatform.etl.demo_params import DemoParams
+from dataplatform.etl.my_filter_transformer import MyFilterTransformer
 
 
 class DemoEtl(Orchestrator):
