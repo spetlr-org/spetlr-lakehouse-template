@@ -7,3 +7,7 @@ include = '\.pyi?$'
 profile = "black"
 src_paths = ["src", "tests"]
 
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
