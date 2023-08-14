@@ -1,6 +1,6 @@
 from spetlr.sql.SqlExecutor import SqlExecutor
 
-from dataplatform.environment import bronze, gold, silver
+from dataplatform.environment.databases import bronze, gold, silver
 
 
 def setup_environment():

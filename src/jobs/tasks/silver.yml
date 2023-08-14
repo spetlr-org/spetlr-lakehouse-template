@@ -1,8 +1,8 @@
-task_key: Silver
+task_key: NycTlcSilver
 job_cluster_key: StrongCluster1
 <<: *common_task_setting
 python_wheel_task:
   entry_point: spetlr
   package_name: spetlr_task
   named_parameters:
-    entry_point: dataplatform.etl.02_silver.main:main
+    entry_point: dataplatform.etl.nyc_tlc.silver.main:main

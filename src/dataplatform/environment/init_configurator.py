@@ -1,6 +1,7 @@
 from spetlr import Configurator
 
-from dataplatform.environment import bronze, config, gold, silver
+from dataplatform.environment import config
+from dataplatform.environment.databases import bronze, gold, silver
 
 
 def init_configurator():
