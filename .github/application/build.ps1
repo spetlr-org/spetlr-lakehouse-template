@@ -36,6 +36,8 @@ pyclean -v .
     -environmentName $environmentName
 
 python setup.py bdist_wheel
+$lib = (Get-ChildItem dist/).Name
+pip install dist/$lib
 
 
 Pop-Location
