@@ -1,6 +1,9 @@
-CREATE DATABASE IF NOT EXISTS {NycTlcSilverDb};
+CREATE DATABASE IF NOT EXISTS {NycTlcSilverDb}
+COMMENT "Silver Database for NYC TLC"
+LOCATION "{NycTlcSilverDb_path}";
 
-CREATE TABLE IF NOT EXISTS {NycTlcSilverTable} (
+CREATE TABLE IF NOT EXISTS {NycTlcSilverTable}
+(
   vendorID INTEGER,
   passengerCount INTEGER,
   tripDistance DOUBLE,
@@ -8,6 +11,6 @@ CREATE TABLE IF NOT EXISTS {NycTlcSilverTable} (
   tipAmount DOUBLE,
   totalAmount DOUBLE
 )
-USING delta
-COMMENT "This table contains demo silver data"
+USING DELTA
+COMMENT "This table contains silver NYC TLC data"
 LOCATION "{NycTlcSilverTable_path}";
