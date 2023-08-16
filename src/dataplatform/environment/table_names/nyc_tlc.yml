@@ -1,5 +1,6 @@
 NycTlcSource:
-  path: capture/data/NYC_TLC_dataset.csv
+  path: /mnt/spetlrlh{ENV}/capture/data/NYC_TLC_dataset
+  format: csv
 
 NycTlcBronzeDb:
   name: nyc_tlc_bronze{ID}
