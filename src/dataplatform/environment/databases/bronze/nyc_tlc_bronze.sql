@@ -1,5 +1,9 @@
-CREATE DATABASE IF NOT EXISTS {NycTlcBronzeDb};
+-- SPETLR.CONFIGURATOR
+CREATE DATABASE IF NOT EXISTS {NycTlcBronzeDb}
+COMMENT "Bronze Database of NYC TLC Records"
+LOCATION "{NycTlcBronzeDb_path}";
 
+-- SPETLR.CONFIGURATOR
 CREATE TABLE IF NOT EXISTS {NycTlcBronzeTable} (
   vendorID INTEGER,
   tpepPickupDateTime TIMESTAMP,
