@@ -36,7 +36,7 @@ class GoldTests(DataframeTestCase):
             [
                 # row 1
                 (
-                    1,  # vendorID
+                    "1",  # vendorID
                     1,  # passengerCount
                     10.1,  # tripDistance
                     "Credit",  # paymentType
@@ -45,7 +45,7 @@ class GoldTests(DataframeTestCase):
                 ),
                 # row 2
                 (
-                    1,  # vendorID
+                    "1",  # vendorID
                     2,  # passengerCount
                     20.2,  # tripDistance
                     "Credit",  # paymentType
@@ -54,7 +54,7 @@ class GoldTests(DataframeTestCase):
                 ),
                 # row 3
                 (
-                    2,  # vendorID
+                    "2",  # vendorID
                     3,  # passengerCount
                     30.3,  # tripDistance
                     "Cash",  # paymentType
@@ -87,7 +87,7 @@ class GoldTests(DataframeTestCase):
             [
                 # row 1
                 (
-                    1,  # VendorID
+                    "1",  # VendorID
                     3,  # TotalPassengers
                     Decimal("30.3"),  # TotalTripDistance
                     Decimal("10.1"),  # TotalTipAmount

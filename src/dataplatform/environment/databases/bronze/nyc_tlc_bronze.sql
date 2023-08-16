@@ -5,26 +5,26 @@ LOCATION "{NycTlcBronzeDb_path}";
 CREATE TABLE IF NOT EXISTS {NycTlcBronzeTable}
 (
   vendorID STRING,
-  tpepPickupDateTime TIMESTAMP,
-  tpepDropoffDateTime TIMESTAMP,
-  passengerCount INTEGER,
-  tripDistance DOUBLE,
+  tpepPickupDateTime STRING,
+  tpepDropoffDateTime STRING,
+  passengerCount STRING,
+  tripDistance STRING,
   puLocationId STRING,
   doLocationId STRING,
-  startLon DOUBLE,
-  startLat DOUBLE,
-  endLon DOUBLE,
-  endLat DOUBLE,
-  rateCodeId INTEGER,
+  startLon STRING,
+  startLat STRING,
+  endLon STRING,
+  endLat STRING,
+  rateCodeId STRING,
   storeAndFwdFlag STRING,
   paymentType STRING,
-  fareAmount DOUBLE,
-  extra DOUBLE,
-  mtaTax DOUBLE,
+  fareAmount STRING,
+  extra STRING,
+  mtaTax STRING,
   improvementSurcharge STRING,
-  tipAmount DOUBLE,
-  tollsAmount DOUBLE,
-  totalAmount DOUBLE
+  tipAmount STRING,
+  tollsAmount STRING,
+  totalAmount STRING
 )
 USING DELTA
 COMMENT "This table contains bronze data for NYC TLC"

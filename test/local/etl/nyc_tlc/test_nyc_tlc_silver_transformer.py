@@ -1,7 +1,6 @@
 import pyspark.sql.types as T
 from spetlr.spark import Spark
 from spetlrtools.testing import DataframeTestCase
-from spetlrtools.time import dt_utc
 
 from dataplatform.etl.nyc_tlc.silver.nyc_tlc_silver_parameters import (
     NycTlcSilverParameters,
@@ -13,47 +12,45 @@ from dataplatform.etl.nyc_tlc.silver.nyc_tlc_silver_transformer import (
 
 class SilverTransfomerTests(DataframeTestCase):
     def test_01_transfomer_silver(self):
-        self.time = dt_utc(2023, 6, 1, 10, 15, 0)
-
         nyc_schema = T.StructType(
             [
-                T.StructField("vendorID", T.IntegerType(), False),
-                T.StructField("tpepPickupDateTime", T.TimestampType(), True),
-                T.StructField("passengerCount", T.IntegerType(), True),
-                T.StructField("tripDistance", T.DoubleType(), True),
+                T.StructField("vendorID", T.StringType(), True),
+                T.StructField("tpepPickupDateTime", T.StringType(), True),
+                T.StructField("passengerCount", T.StringType(), True),
+                T.StructField("tripDistance", T.StringType(), True),
                 T.StructField("puLocationId", T.StringType(), True),
-                T.StructField("rateCodeId", T.IntegerType(), True),
+                T.StructField("rateCodeId", T.StringType(), True),
                 T.StructField("paymentType", T.StringType(), True),
-                T.StructField("tipAmount", T.DoubleType(), True),
-                T.StructField("tollsAmount", T.DoubleType(), True),
-                T.StructField("totalAmount", T.DoubleType(), True),
+                T.StructField("tipAmount", T.StringType(), True),
+                T.StructField("tollsAmount", T.StringType(), True),
+                T.StructField("totalAmount", T.StringType(), True),
             ]
         )
 
         nyc_data = [
             (  # Row 1
-                1,  # vendorID
-                self.time,  # tpepPickupDateTime
-                1,  # passengerCount
-                10.1,  # tripDistance
+                "1",  # vendorID
+                "2023-08-30",  # tpepPickupDateTime
+                "1",  # passengerCount
+                "10.1",  # tripDistance
                 "10",  # puLocationId
-                10,  # rateCodeId
+                "10",  # rateCodeId
                 "1",  # paymentType
-                10.1,  # tipAmount
-                0.0,  # tollsAmount
-                100.1,  # totalAmount
+                "10.1",  # tipAmount
+                "0.0",  # tollsAmount
+                "100.1",  # totalAmount
             ),
             (  # Row 2
-                2,  # vendorID
-                self.time,  # tpepPickupDateTime
-                2,  # passengerCount
-                20.2,  # tripDistance
+                "2",  # vendorID
+                "2023-08-30",  # tpepPickupDateTime
+                "2",  # passengerCount
+                "20.2",  # tripDistance
                 "20",  # puLocationId
-                20,  # rateCodeId
+                "20",  # rateCodeId
                 "2",  # paymentType
-                0.0,  # tipAmount
-                20.2,  # tollsAmount
-                200.2,  # totalAmount
+                "0.0",  # tipAmount
+                "20.2",  # tollsAmount
+                "200.2",  # totalAmount
             ),
         ]
 
@@ -68,7 +65,7 @@ class SilverTransfomerTests(DataframeTestCase):
         expected_data = [
             # row 1
             (
-                1,  # vendorID
+                "1",  # vendorID
                 1,  # passengerCount
                 10.1,  # tripDistance
                 "Credit",  # paymentType
@@ -77,7 +74,7 @@ class SilverTransfomerTests(DataframeTestCase):
             ),
             # row 2
             (
-                2,  # vendorID
+                "2",  # vendorID
                 2,  # passengerCount
                 20.2,  # tripDistance
                 "Cash",  # paymentType

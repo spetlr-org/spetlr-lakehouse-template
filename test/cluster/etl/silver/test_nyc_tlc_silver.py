@@ -49,28 +49,28 @@ class SilverTests(DataframeTestCase):
             ],
             [
                 (  # Row 1
-                    1,  # vendorID
-                    cls.time,  # tpepPickupDateTime
-                    1,  # passengerCount
-                    10.1,  # tripDistance
+                    "1",  # vendorID
+                    "2023-08-30",  # tpepPickupDateTime
+                    "1",  # passengerCount
+                    "10.1",  # tripDistance
                     "10",  # puLocationId
-                    10,  # rateCodeId
+                    "10",  # rateCodeId
                     "1",  # paymentType
-                    10.1,  # tipAmount
-                    0.0,  # tollsAmount
-                    100.1,  # totalAmount
+                    "10.1",  # tipAmount
+                    "0.0",  # tollsAmount
+                    "100.1",  # totalAmount
                 ),
                 (  # Row 2
-                    2,  # vendorID
-                    cls.time,  # tpepPickupDateTime
-                    2,  # passengerCount
-                    20.2,  # tripDistance
+                    "2",  # vendorID
+                    "2023-08-30",  # tpepPickupDateTime
+                    "2",  # passengerCount
+                    "20.2",  # tripDistance
                     "20",  # puLocationId
-                    20,  # rateCodeId
+                    "20",  # rateCodeId
                     "2",  # paymentType
-                    0.0,  # tipAmount
-                    20.2,  # tollsAmount
-                    200.2,  # totalAmount
+                    "0.0",  # tipAmount
+                    "20.2",  # tollsAmount
+                    "200.2",  # totalAmount
                 ),
             ],
         )
@@ -99,7 +99,7 @@ class SilverTests(DataframeTestCase):
             [
                 # row 1
                 (
-                    1,  # vendorID
+                    "1",  # vendorID
                     1,  # passengerCount
                     10.1,  # tripDistance
                     "Credit",  # paymentType
@@ -108,7 +108,7 @@ class SilverTests(DataframeTestCase):
                 ),
                 # row 2
                 (
-                    2,  # vendorID
+                    "2",  # vendorID
                     2,  # passengerCount
                     20.2,  # tripDistance
                     "Cash",  # paymentType

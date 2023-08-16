@@ -12,7 +12,7 @@ class GoldTransfomerTests(DataframeTestCase):
     def test_01_transfomer_gold(self):
         nyc_silver_schema = T.StructType(
             [
-                T.StructField("vendorID", T.IntegerType(), False),
+                T.StructField("vendorID", T.StringType(), False),
                 T.StructField("passengerCount", T.IntegerType(), True),
                 T.StructField("tripDistance", T.DoubleType(), True),
                 T.StructField("paymentType", T.StringType(), True),
@@ -24,7 +24,7 @@ class GoldTransfomerTests(DataframeTestCase):
         nyc_silver_data = [
             # row 1
             (
-                1,  # vendorID
+                "1",  # vendorID
                 1,  # passengerCount
                 10.1,  # tripDistance
                 "Credit",  # paymentType
@@ -33,7 +33,7 @@ class GoldTransfomerTests(DataframeTestCase):
             ),
             # row 2
             (
-                1,  # vendorID
+                "1",  # vendorID
                 2,  # passengerCount
                 20.2,  # tripDistance
                 "Credit",  # paymentType
@@ -42,7 +42,7 @@ class GoldTransfomerTests(DataframeTestCase):
             ),
             # row 3
             (
-                2,  # vendorID
+                "2",  # vendorID
                 3,  # passengerCount
                 30.3,  # tripDistance
                 "Cash",  # paymentType
@@ -60,7 +60,7 @@ class GoldTransfomerTests(DataframeTestCase):
         expected_data = [
             # row 1
             (
-                1,  # VendorID
+                "1",  # VendorID
                 3,  # TotalPassengers
                 Decimal("30.3"),  # TotalTripDistance
                 Decimal("10.1"),  # TotalTipAmount

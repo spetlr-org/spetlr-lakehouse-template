@@ -25,12 +25,12 @@ class NycTlcSilverTransfomer(Transformer):
         )
 
         df_final = df.select(
-            f.col("vendorID"),
-            f.col("passengerCount"),
-            f.col("tripDistance"),
+            f.col("vendorID").cast("string"),
+            f.col("passengerCount").cast("int"),
+            f.col("tripDistance").cast("double"),
             f.col("paymentType").cast("string"),
-            f.col("tipAmount"),
-            f.col("totalAmount"),
+            f.col("tipAmount").cast("double"),
+            f.col("totalAmount").cast("double"),
         )
 
         return df_final
