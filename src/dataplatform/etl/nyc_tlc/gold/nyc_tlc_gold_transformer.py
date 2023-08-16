@@ -22,7 +22,7 @@ class NycTlcGoldTransfomer(Transformer):
             )
         )
         df_final = df.select(
-            f.col("vendorID").cast("str").alias("VendorID"),
+            f.col("vendorID").cast("string").alias("VendorID"),
             f.col("TotalPassengers").cast("int"),
             f.col("TotalTripDistance").cast("decimal(10,1)"),
             f.col("TotalTipAmount").cast("decimal(10,1)"),
