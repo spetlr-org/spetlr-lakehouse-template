@@ -17,7 +17,7 @@ class BronzeTests(DataframeTestCase):
     @classmethod
     def setUpClass(cls) -> None:
         debug_configurator()
-        SqlExecutor(base_module=bronze).execute_sql_file("nyc_tlc_bronze.sql")
+        SqlExecutor(base_module=bronze).execute_sql_file("nyc_tlc_bronze")
 
     @classmethod
     def tearDownClass(cls) -> None:
