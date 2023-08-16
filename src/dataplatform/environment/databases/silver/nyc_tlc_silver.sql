@@ -4,7 +4,7 @@ LOCATION "{NycTlcSilverDb_path}";
 
 CREATE TABLE IF NOT EXISTS {NycTlcSilverTable}
 (
-  vendorID INTEGER,
+  vendorID STRING,
   passengerCount INTEGER,
   tripDistance DOUBLE,
   paymentType STRING,

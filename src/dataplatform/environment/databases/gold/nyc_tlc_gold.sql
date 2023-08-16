@@ -4,7 +4,7 @@ LOCATION "{NycTlcGoldDb_path}";
 
 CREATE TABLE IF NOT EXISTS {NycTlcGoldTable}
 (
-  VendorID INTEGER,
+  VendorID STRING,
   TotalPassengers INTEGER,
   TotalTripDistance DECIMAL(10, 1),
   TotalTipAmount DECIMAL(10, 1),

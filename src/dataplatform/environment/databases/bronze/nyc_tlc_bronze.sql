@@ -4,7 +4,7 @@ LOCATION "{NycTlcBronzeDb_path}";
 
 CREATE TABLE IF NOT EXISTS {NycTlcBronzeTable}
 (
-  vendorID INTEGER,
+  vendorID STRING,
   tpepPickupDateTime TIMESTAMP,
   tpepDropoffDateTime TIMESTAMP,
   passengerCount INTEGER,
