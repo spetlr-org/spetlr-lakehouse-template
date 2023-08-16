@@ -1,9 +1,9 @@
--- SPETLR.CONFIGURATOR
+-- SPETLR.CONFIGURATOR key: NycTlcBronzeDb
 CREATE DATABASE IF NOT EXISTS {NycTlcBronzeDb}
-COMMENT "Bronze Database of NYC TLC Records"
+COMMENT "Bronze Database for NYC TLC"
 LOCATION "{NycTlcBronzeDb_path}";
 
--- SPETLR.CONFIGURATOR
+-- SPETLR.CONFIGURATOR key: NycTlcBronzeTable
 CREATE TABLE IF NOT EXISTS {NycTlcBronzeTable} (
   vendorID INTEGER,
   tpepPickupDateTime TIMESTAMP,
@@ -28,5 +28,5 @@ CREATE TABLE IF NOT EXISTS {NycTlcBronzeTable} (
   totalAmount DOUBLE
 )
 USING delta
-COMMENT "This table contains demo bronze data"
+COMMENT "This table contains bronze data for NYC TLC"
 LOCATION "{NycTlcBronzeTable_path}";
