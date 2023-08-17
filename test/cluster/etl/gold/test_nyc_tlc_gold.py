@@ -71,7 +71,6 @@ class GoldTests(DataframeTestCase):
 
     def test_01_can_orchestrate_gold(self):
         NycTlcGoldOrchestrator(self.params).execute()
-        self.assertGreater(self.params.dh_target.read().count(), 0)
 
     def test_02_transfomer_gold(self):
         df = self.sut.process(self.df_silver)

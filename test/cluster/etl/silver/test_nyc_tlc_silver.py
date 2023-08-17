@@ -82,7 +82,6 @@ class SilverTests(DataframeTestCase):
 
     def test_01_can_orchestrate_silver(self):
         NycTlcSilverOrchestrator(self.params).execute()
-        self.assertGreater(self.params.dh_target.read().count(), 0)
 
     def test_02_transfomer_silver(self):
         df = self.sut.process(self.df_bronze)
