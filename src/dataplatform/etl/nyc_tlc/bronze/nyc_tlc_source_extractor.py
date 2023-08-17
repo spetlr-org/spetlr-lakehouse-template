@@ -20,6 +20,5 @@ class NycTlcSourceExtractor(Extractor):
             .read.format("csv")
             .option("delimiter", ",")
             .option("header", True)
-            .option("overwriteSchema", "true")
             .load(path)
         )

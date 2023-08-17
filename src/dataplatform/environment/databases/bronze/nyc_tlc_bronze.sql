@@ -4,6 +4,7 @@ LOCATION "{NycTlcBronzeDb_path}";
 
 CREATE TABLE IF NOT EXISTS {NycTlcBronzeTable}
 (
+  _c0 STRING,
   vendorID STRING,
   tpepPickupDateTime STRING,
   tpepDropoffDateTime STRING,
