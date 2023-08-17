@@ -6,7 +6,7 @@ from spetlr.sql.SqlExecutor import SqlExecutor
 from spetlr.utils import DataframeCreator
 from spetlrtools.testing import DataframeTestCase
 
-from dataplatform.environment.databases import gold
+from dataplatform.environment.databases import gold, silver
 from dataplatform.etl.nyc_tlc.gold.nyc_tlc_gold_orchestrator import (
     NycTlcGoldOrchestrator,
 )
@@ -18,6 +18,7 @@ class GoldTests(DataframeTestCase):
     @classmethod
     def setUpClass(cls) -> None:
         debug_configurator()
+        SqlExecutor(base_module=silver).execute_sql_file("nyc_tlc_silver.sql")
         SqlExecutor(base_module=gold).execute_sql_file("nyc_tlc_gold.sql")
 
         cls.params = NycTlcGoldParameters()

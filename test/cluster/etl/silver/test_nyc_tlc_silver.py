@@ -6,7 +6,7 @@ from spetlr.utils import DataframeCreator
 from spetlrtools.testing import DataframeTestCase
 from spetlrtools.time import dt_utc
 
-from dataplatform.environment.databases import silver
+from dataplatform.environment.databases import bronze, silver
 from dataplatform.etl.nyc_tlc.bronze.nyc_tlc_source_extractor import (
     NycTlcSourceExtractor,
 )
@@ -25,6 +25,7 @@ class SilverTests(DataframeTestCase):
     @classmethod
     def setUpClass(cls) -> None:
         debug_configurator()
+        SqlExecutor(base_module=bronze).execute_sql_file("nyc_tlc_bronze.sql")
         SqlExecutor(base_module=silver).execute_sql_file("nyc_tlc_silver.sql")
 
         cls.params = NycTlcSilverParameters()
