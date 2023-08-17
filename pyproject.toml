@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=46.4.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [tool.black]
 line-length = 88
 include = '\.pyi?$'
@@ -6,4 +10,3 @@ include = '\.pyi?$'
 [tool.isort]
 profile = "black"
 src_paths = ["src", "tests"]
-
