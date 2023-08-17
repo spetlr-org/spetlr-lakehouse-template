@@ -1,4 +1,5 @@
 from spetlr.etl import Orchestrator
+from spetlr.etl.extractors import SimpleExtractor
 from spetlr.etl.loaders.simple_loader import SimpleLoader
 
 from dataplatform.etl.nyc_tlc.silver.nyc_tlc_silver_parameters import (
@@ -15,9 +16,9 @@ class NycTlcSilverOrchestrator(Orchestrator):
 
         self.params = params or NycTlcSilverParameters()
 
-        self.extract_from(self.params.dh_source)
+        self.extract_from(SimpleExtractor(self.params.dh_source, "bronze"))
 
-        self.transform_with(NycTlcSilverTransfomer)
+        self.transform_with(NycTlcSilverTransfomer(self.params))
 
         self.load_into(
             SimpleLoader(
