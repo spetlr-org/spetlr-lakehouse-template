@@ -7,7 +7,8 @@ pytest
 black
 isort
 flake8
-dbx<=0.8.18
+dbx
 spetlr-tools==0.1.39
 jinja2
 jinja-cli
+pydantic>=1.10.8,<2.0.0
