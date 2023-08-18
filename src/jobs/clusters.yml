@@ -43,7 +43,7 @@ custom:
 
   multi_task_job_settings: &multi_task_job_settings
     format: MULTI_TASK
-    <<: *common_job_settings
+    #<<: *common_job_settings
     job_clusters:
       - job_cluster_key: StrongCluster1
         new_cluster:
