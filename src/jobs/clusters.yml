@@ -39,11 +39,12 @@ custom:
 
   common_task_setting: &common_task_setting
     libraries: {% include 'sparklibs.json' %}
-
+  common_job_settings: &common_job_settings
+    tags: {% include 'tags.json' %}
 
   multi_task_job_settings: &multi_task_job_settings
     format: MULTI_TASK
-    #<<: *common_job_settings
+    <<: *common_job_settings
     job_clusters:
       - job_cluster_key: StrongCluster1
         new_cluster:

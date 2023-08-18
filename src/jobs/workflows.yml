@@ -21,3 +21,4 @@ environments:
           quartz_cron_expression: "0 0 3 * * ?"
           timezone_id: "UTC"
           pause_status: "PAUSED"
+        <<: *multi_task_job_settings
