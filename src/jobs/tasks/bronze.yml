@@ -1,5 +1,5 @@
 task_key: NycTlcBronze
-job_cluster_key: StrongCluster1
+job_cluster_key: SmallCluster1
 <<: *common_task_setting
 python_wheel_task:
   entry_point: nyc_tlc_bronze
