@@ -1,4 +1,4 @@
-from dataplatform.environment import init_configurator
+from dataplatform.environment.init_configurator import init_configurator
 from dataplatform.environment.setup_environment import setup_environment
 from dataplatform.etl.nyc_tlc.silver.nyc_tlc_silver_orchestrator import (
     NycTlcSilverOrchestrator,
