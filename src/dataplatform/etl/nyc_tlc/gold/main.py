@@ -1,8 +1,8 @@
+from dataplatform.environment import init_configurator
+from dataplatform.environment.setup_environment import setup_environment
 from dataplatform.etl.nyc_tlc.gold.nyc_tlc_gold_orchestrator import (
     NycTlcGoldOrchestrator,
 )
-from src.dataplatform.environment import init_configurator
-from src.dataplatform.environment.setup_environment import setup_environment
 
 
 def main():
