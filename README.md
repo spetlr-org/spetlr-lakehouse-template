@@ -19,7 +19,7 @@ Get started with the SPETLR Databricks Lakehouse Platform Template and accelerat
 ## Medallion architecture
 The diagram illustrates the Medallion Architecture followed in the SPETLR Databricks Lakehouse Platform Template. It provides a visual representation of the flow of data through the Bronze, Silver, and Gold layers of the data lake, showcasing the ETL processes and transformations at each stage.
 
-![medallion-architecture](medallion_architecture.drawio.png)
+![medallion-architecture](/img/medallion_architecture.drawio.png)
 
 
 
@@ -57,6 +57,16 @@ The silver data is used for presenting a consumption-ready gold table. In this d
 |----------|-----------------|-------------------|----------------|-----------------|
 |     1     |    5083             |      1109             |  7100              |  90023               |
 
+
+# Databricks Workflow
+This demo project showcases an example of a workflow within the Databricks environment. The project demonstrates the implementation of a three-layer medallion architecture, with each layer being represented by a job task.
+
+![workflow_overview](/img/workflows_overview.png)
+In the image above, you can see the Databricks workflow page that displays a single workflow. This workflow represents the entire process of the medallion architecture, from data bronze to gold - find the workflow configuration [here](/src/jobs/workflows.yml).
+
+![example_etl_workflow](/img/example_etl_workflow.png)
+In the image above, you can see a detailed view of the three job tasks within the workflow. Each task represents a layer in the medallion architecture. The three tasks are configured [here](/src/jobs/tasks/). 
+
 # Azure Architeture
 The Bicep-generated Azure Architecture Cloud Diagram below presents a visualization of the various Azure resources deployed within a single resource group. These resources are used in supporting the SPETLR Databricks Lakehouse Platform Template. Here is a brief overview of the Azure resources:
 
@@ -65,4 +75,4 @@ The Bicep-generated Azure Architecture Cloud Diagram below presents a visualizat
 * Storage Account: This is a scalable and durable cloud storage service that provides the ability to store and manage file shares, blobs, tables, and queues.
 * Containers: Utilized within the Storage Account, containers are used to store and organize large volumes of data in the form of blobs - one container for each layer in the medallion architecture. 
 
-![az_arch](/azure_arhitecture.png)
+![az_arch](/img/azure_arhitecture.png)
