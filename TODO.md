@@ -14,8 +14,8 @@ Create deployment pipeline:
 For each environment Azure ressources:
 * [x] Resource group
 * [x] Databricks workspace 
-  * [ ] +clusters
-  * [ ] direct access to storage account
+  * [x] +clusters
+  * [x] direct access to storage account
 * [x] Storage account for sample data
 
 ### NYC Dataset (LauJohansson)
@@ -25,24 +25,24 @@ For each environment Azure ressources:
 ### Deployment Databricks (JeppeBlixen, farbo, LauJohansson)
 Repo:
 * [x] Environment folder
- * [ ] Databases
+ * [x] Databases
   * .sql files with bronze, silver and gold definitions (use spetlr config ids) 
- * [ ] tablenames
+ * [x] tablenames
    * .yml files with configurator info    
 
 * [x] Three folders
-  * [ ] Bronze
-    * [ ] Orchestrator (w. simple E-T-L steps)
-  * [ ] Silver
-    * [ ] Orchestrator (w. simple E-T-L steps)
-  * [ ] Gold
-    * [ ] Orchestrator (w. simple E-T-L steps)
+  * [x] Bronze
+    * [x] Orchestrator (w. simple E-T-L steps)
+  * [x] Silver
+    * [x] Orchestrator (w. simple E-T-L steps)
+  * [x] Gold
+    * [x] Orchestrator (w. simple E-T-L steps)
 * [x] Test folder
   * [x] Local
-    * [ ] One transformer test
-    * [ ] One TestHandle example
+    * [x] One transformer test
+    * [x] One TestHandle example
   * [x] Cluster
-    * [ ] Integration test using Configurator
+    * [x] Integration test using Configurator
 * [x] Job folder
   * [x] Minimum one example of dbx configured jobs
      
