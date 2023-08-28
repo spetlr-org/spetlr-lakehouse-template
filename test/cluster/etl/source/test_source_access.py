@@ -1,4 +1,5 @@
 import unittest
+from test.env.debug_configurator import debug_configurator
 
 from spetlr.spark import Spark
 
@@ -10,6 +11,7 @@ from dataplatform.etl.nyc_tlc.bronze.nyc_tlc_bronze_parameters import (
 class TestSource(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        debug_configurator()
         cls.params = NycTlcBronzeParameters()
         cls.path = cls.params.nyc_tlc_path
         cls.sc = Spark.get().sparkContext
