@@ -9,7 +9,7 @@ from dataplatform.etl.nyc_tlc.bronze.nyc_tlc_bronze_parameters import (
 
 class TestSource(unittest.TestCase):
     @classmethod
-    def setup_method(cls):
+    def setUpClass(cls):
         cls.params = NycTlcBronzeParameters()
         cls.path = cls.params.nyc_tlc_path
         cls.sc = Spark.get().sparkContext
