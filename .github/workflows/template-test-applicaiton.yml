@@ -1,5 +1,5 @@
 
-name: Test-Application
+name: Test-Application - Template
 
 on:
   workflow_call:

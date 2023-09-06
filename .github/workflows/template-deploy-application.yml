@@ -1,5 +1,5 @@
 
-name: Deployment-Application
+name: Deployment-Application - Template
 
 on:
   workflow_call:
