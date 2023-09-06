@@ -6,7 +6,7 @@ $repoRoot = (git rev-parse --show-toplevel)
 # import utility functions
 . "$repoRoot/.github/deploy/Utilities/all.ps1"
 
-if(-not (Check-AzureAccountTag "spetlr-lakehouse-demo")){
+if (-not (Check-AzureAccountTag $expectedAccountTag)) {
     throw "Wrong subscription"
 }
 

@@ -10,8 +10,8 @@
 Write-Host "Check correct subsctiption is selected."
 $account = az account show | ConvertFrom-Json
 Write-Host "Current subscription is $($account.name)"
-if ($account.name -notmatch "ATC"){
-  Write-Host "Expected subscription to match ATC" -ForegroundColor Red
+if ($account.name -notmatch $subscriptionName) {
+  Write-Host "Expected subscription to match $subscriptionName" -ForegroundColor Red
   Write-Host "Please change subscription" -ForegroundColor Red
   Exit 1
 }
@@ -25,17 +25,17 @@ $appId = az ad app list `
   --query [-1].appId `
   --out tsv
 
-if ($null -eq $appId)
-{
+if ($null -eq $appId) {
   Write-Host "Creating SPN Registration" -ForegroundColor DarkGreen
   $appId = az ad app create --display-name $appRegName `
-      --query appId `
-      --out tsv
+    --query appId `
+    --out tsv
 
   Write-Host "  Creating Service Principal" -ForegroundColor DarkYellow
   $newSpnId = az ad sp create --id $appId
-}else{
-    Write-Host "App Registration exists." -ForegroundColor DarkGreen
+}
+else {
+  Write-Host "App Registration exists." -ForegroundColor DarkGreen
 
 }
 
@@ -75,7 +75,7 @@ $permission_id = "18a4783c-866b-4cc7-a460-3d5e5662c884"
 #$permission_id = $permission.id
 
 az ad app permission add --id $appId --api $graph.appId --api-permission "$permission_id=Role"
-az ad app permission grant --id $appId  --api $graph.appId --scope $account.id
+az ad app permission grant --id $appId --api $graph.appId --scope $account.id
 
 Write-Host "The granting of the Graph API permission Application.ReadWrite.OwnedBy does not always work."
 Write-Host "You may have to add this permission from the portal."
@@ -83,7 +83,7 @@ Write-Host "You may have to add this permission from the portal."
 # Add the Privileged Role Administrator to the spn
 # This allows it to add the sql server to the role of Directory Reader
 $roleId = "e8611ab8-c189-46e8-94e1-60213ab1f814"
-Graph-CreateRole -principalId $resourceId  -roleDefinitionId $roleId
+Graph-CreateRole -principalId $resourceId -roleDefinitionId $roleId
 
 
 #######################################################################################

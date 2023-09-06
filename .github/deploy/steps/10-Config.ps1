@@ -11,50 +11,52 @@ $serviceName = "LakeHouse"
 $systemAbbreviation = "lh"
 $companyHostName = "spetlr.com"
 
+$subscriptionName = "ATC"
+$expectedAccountTag = "spetlr-lakehouse-demo"
+
 
 # at some point, the following will be made variable between deployments
 $resourceGroupName = Get-ResourceGroupName -systemName $systemName -environmentName $environmentName -serviceName $serviceName
 $resourceName = Get-ResourceName -companyAbbreviation $companyAbbreviation -systemAbbreviation $systemAbbreviation -environmentName $environmentName
 
 
-$databricksName               = $resourceName
-$dataLakeName                 = $resourceName
+$databricksName = $resourceName
+$dataLakeName = $resourceName
 
 
 # The SPN whose role will be used to access the storage account
-$mountSpnName                 = "SpetlrLhMountSpn$environmentName"
+$mountSpnName = "SpetlrLhMountSpn$environmentName"
 
 # This SPn will be used to deploy databricks
 # The reason fo using a subsidiary SPN for this is that SPN can pull a databricks
 # token from an API with no human in the loop. So if the identity that runs the
 # deployment is a person, using this SPN allows us to still do this.
-$dbDeploySpnName              = "SpetlrLhDbSpn$environmentName"
+$dbDeploySpnName = "SpetlrLhDbSpn$environmentName"
 
 # The SPN that runs the github pipeline
-$cicdSpnName                  = "SpetlrLakehousePipe"
+$cicdSpnName = "SpetlrLakehousePipe"
 
 
 
 # Use eastus because of free azure subscription
 # note, we no longer use a free subscription
-$location                     = "westeurope"
+$location = "westeurope"
 
 $resourceTags = @{
-  Owner='Auto Deployed'
-  System='SPETLR-ORG'
-  Service='LakeHouse'
-  deployedAt="$(Get-Date -Format "o" -AsUTC)"
+  Owner      = 'Auto Deployed'
+  System     = 'SPETLR-ORG'
+  Service    = 'LakeHouse'
+  deployedAt = "$(Get-Date -Format "o" -AsUTC)"
 }
-$resourceTags = ($resourceTags| ConvertTo-Json -Depth 4 -Compress)
+$resourceTags = ($resourceTags | ConvertTo-Json -Depth 4 -Compress)
 
 $dataLakeContainers = (, @(@{"name" = "capture" }, @{"name" = "bronze" }, @{"name" = "silver" }, @{"name" = "gold" }))
 $dataLakeContainersJson = ($dataLakeContainers | ConvertTo-Json -Depth 4 -Compress)
 
 
-if ($IsLinux)
-{
-    $dataLakeContainersJson = $dataLakeContainersJson -replace '"', '\"'
-    $resourceTags = $resourceTags -replace '"', '\"'
+if ($IsLinux) {
+  $dataLakeContainersJson = $dataLakeContainersJson -replace '"', '\"'
+  $resourceTags = $resourceTags -replace '"', '\"'
 }
 
 $keyVaultName = $resourceName
