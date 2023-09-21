@@ -1,5 +1,5 @@
 
-name: Local Test (Unittest)
+name: Local Test (Unittest) - Template
 
 on:
   workflow_call:
