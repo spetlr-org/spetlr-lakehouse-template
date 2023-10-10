@@ -21,7 +21,7 @@ function New-DatabricksInstancePool {
     [Parameter(Mandatory = $false)]
     [ValidateNotNullOrEmpty()]
     [int]
-    $minIdleInstances = 1,
+    $minIdleInstances = 0,
   
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
